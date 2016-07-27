@@ -1,60 +1,24 @@
 import unittest
 from mathMagician import *
+
 class TestMagician(unittest.TestCase):
 
 
-@classmethod
-def setUp(self):
-
-  self.magic = Magician()
-  self.input_is_int = 1
-  self.output = user_output
-  self.user_choice = input('I am the Math Magician. What would you like me to do? ')
+  @classmethod
+  def setUp(self):
+    self.magic = Magician()
 
 
-def Test_input_integers(self, number_to_output):
-
-  self.assertEqual(self.magic.print_integers(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_integers(self.input_is_int), int)
-
-def Test_input_fibonacci(self, number_to_output):
-
-  self.assertEqual(self.magic.print_integers(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_integers(self.input_is_int), int)
+  def test_integer_creation(self):
+    self.assertEqual(self.magic.create_integers(5), [1,2,3,4,5])
 
 
-def Test_input_primes(self, number_to_output):
-
-  self.assertEqual(self.magic.print_integers(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_integers(self.input_is_int), int)
-
-def Test_print_integers(self, number_to_output):
-
-  self.assertEqual(self.magic.print_integers(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_integers(self.input_is_int), int)
+  def test_fibonacci_creation(self):
+    self.assertEqual(self.magic.create_fibonacci(5), [1,2,3,5])
 
 
-
-
-def Test_print_fibonacci(self, number_to_output):
-
-  self.assertEqual(self.magic.print_fibonacci(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_fibonacci(self.input_is_int), int)
-
-
-
-def Test_print_primes(self, number_to_output):
-
-  self.assertEqual(self.magic.print_primes(self.input_is_int), 1)
-  self.assertEqual(self.magic.print_primes(self.input_is_int), int)
-
-
-
-
-
-
-
-
+  # def test_primes_creation(self):
+  #   self.assertEqual(self.magic.create_primes(12), [2,3,5,7])
 
 
 
