@@ -17,8 +17,8 @@ class TestMagician(unittest.TestCase):
     self.assertEqual(self.magic.create_fibonacci(5), [1,2,3,5])
 
 
-  # def test_primes_creation(self):
-  #   self.assertEqual(self.magic.create_primes(12), [2,3,5,7])
+  def test_primes_creation(self):
+    self.assertEqual(self.magic.create_primes(5), [2,3,5,7, 11])
 
 
 

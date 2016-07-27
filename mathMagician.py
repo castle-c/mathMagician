@@ -3,7 +3,7 @@ import time
 class Magician():
 
   # def __init__(self):
-  #   self.numCount = [];
+  #   self.numtestNum = [];
   #   self.user = None
   #   self.user_choice = input('I am the Math Magician. What would you like me to do? ')
 
@@ -13,7 +13,7 @@ class Magician():
 
     print("1. integers")
     print("2. fibonacci")
-    # print("3. primes")
+    print("3. primes")
     print("4. quit program")
 
     user_choice = input(">")
@@ -28,9 +28,9 @@ class Magician():
        self.create_fibonacci(fibNums)
 
 
-    # if user_choice == "3":
-    #    primeNums = input("How many? ")
-    #    self.create_primes(primeNums)
+    if user_choice == "3":
+       primeNums = int(input("How many? "))
+       self.create_primes(primeNums)
 
 
     if user_choice != "4":
@@ -61,26 +61,37 @@ class Magician():
       time.sleep(1)
     return fibList
 
-  # def create_primes(self, testNum):
-  #   primeList = []
-  #   count = testNum
+  def create_primes(self, testNum):
+    i, x = 2, 1
+    primeList = []
 
-  #   while True:
-  #       isprime = True
+    # x starts at 2 and ends at whatever the user typed in
+    # for number of numbers to display
+    while x <= testNum:
 
-  #       for x in range(2, int(math.sqrt(count) + 1)):
-  #           if count % x == 0:
-  #               isprime = False
-  #               break
+      # Start by assuming it is a prime number
+      isPrime = True
 
-  #       if isprime:
-  #           print (count)
-  #           print(isprime)
+      # Using the range 2...(square root of current number)
+      for n in range(2, int(math.sqrt(i) + 1)):
 
-  #       count += 1
-  #       primeList.append(is)
+        # If there is not a remainder with modulo calculation
+        # then it's not a prime number
+        if i % n == 0:
+          isPrime = False
+          break
 
-  #       return primeList
+      # Range loop is done, check if prime got negated
+      # If not then we know it's a prime number
+      if isPrime:
+        primeList.append(i)
+        x += 1
+
+      i += 1
+    for a in primeList:
+      print(a)
+      time.sleep(1)
+    return primeList
 
 
 
